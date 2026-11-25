@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Koko Kraft | ช็อคโกแลตแท่งคราฟต์</title>
+<meta name="description" content="ช็อคโกแลตแท่งคราฟต์ ดาร์ก 70% และ มิลค์ 45% สั่งออนไลน์ ส่งทั่วไทย">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@600;800&family=Prompt:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#DCE5DF;--ink:#2A1710;--plum:#3B1F2B;--gold:#C98F2B;--card:#F4F7F4;--line:#B9C7BE;--err:#A4262C}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Prompt,"Noto Sans Thai",system-ui,sans-serif;line-height:1.7}
+h1,h2,h3{font-family:"Noto Serif Thai",Georgia,serif;line-height:1.25;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{padding:18px 0;font-family:"Noto Serif Thai",serif;font-weight:800;font-size:20px}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:30px 0 60px}
+.hero h1{font-size:clamp(34px,6vw,60px);font-weight:800}
+.hero p{max-width:34ch;font-size:18px;margin:18px 0 26px}
+.btn{display:inline-block;background:var(--plum);color:#fff;border:0;border-radius:6px;padding:13px 26px;font:500 17px Prompt,sans-serif;cursor:pointer;text-decoration:none}
+.btn:hover{background:#2A1019}
+.btn:disabled{opacity:.6;cursor:wait}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.bar{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(6,1fr);gap:6px;background:#2A1019;padding:12px;border-radius:12px;aspect-ratio:2/3;width:100%;max-width:300px;margin-left:auto;transform:rotate(4deg);box-shadow:0 18px 30px -18px #2A1710}
+.bar i{background:linear-gradient(145deg,#6B3A2C,#3B1F2B);border-radius:4px;box-shadow:inset 2px 2px 0 #ffffff22,inset -2px -2px 0 #00000055}
+.bar i:nth-child(7){background:linear-gradient(145deg,#6B3A2C,#3B1F2B);transform:translate(10px,-8px) rotate(6deg)}
+section{padding:46px 0}
+h2{font-size:clamp(26px,4vw,36px);margin-bottom:22px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.product{background:var(--card);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.product img{width:100%;height:auto;display:block;aspect-ratio:1/1;object-fit:cover}
+.pbody{padding:18px 20px 22px}
+.pbody h3{font-size:22px}
+.pbody p{margin:6px 0 12px}
+.price{font-weight:500;font-size:20px}
+.sku{font-size:13px;color:#5b6b61}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.facts div{border-left:4px solid var(--gold);padding-left:14px}
+.facts b{font-family:"Noto Serif Thai",serif;font-size:18px;display:block}
+form{background:var(--card);border-radius:10px;padding:26px;display:grid;gap:18px}
+fieldset{border:0;padding:0;margin:0;display:grid;gap:12px}
+legend{font-family:"Noto Serif Thai",serif;font-weight:600;font-size:19px;margin-bottom:8px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{display:grid;gap:4px;font-size:15px}
+input,textarea{font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink)}
+.item{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px 14px}
+.qty{display:flex;align-items:center;gap:10px}
+.qty button{width:36px;height:36px;border-radius:50%;border:1px solid var(--plum);background:#fff;font-size:20px;cursor:pointer;color:var(--plum)}
+.qty output{min-width:24px;text-align:center;font-weight:500}
+.sum{background:#fff;border-radius:8px;padding:12px 16px;display:grid;gap:2px}
+.sum div{display:flex;justify-content:space-between}
+.sum .total{font-weight:500;font-size:19px;border-top:1px solid var(--line);margin-top:6px;padding-top:6px}
+#msg{padding:14px 16px;border-radius:8px;display:none}
+#msg.ok{display:block;background:#DDEBD5;border:1px solid #7CA46B}
+#msg.err{display:block;background:#F6DDDD;border:1px solid var(--err);color:var(--err)}
+footer{padding:30px 0 50px;font-size:14px;color:#4a5a50}
+@media(max-width:720px){.hero{grid-template-columns:1fr}.bar{margin:10px auto 0;max-width:200px}.row{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:no-preference){.bar{animation:settle .9s ease-out both}@keyframes settle{from{transform:rotate(-6deg) translateY(24px);opacity:0}}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>Koko Kraft</header>
+
+<div class="hero">
+  <div>
+    <h1>ช็อคโกแลตแท่ง<br>เคี่ยวจากเมล็ดโกโก้ไทย</h1>
+    <p>สองรสชาติ แท่งละ 50 กรัม ห่อกระดาษทีละแท่ง สั่งวันนี้ แพ็คและส่งภายใน 2 วันทำการ</p>
+    <a class="btn" href="#order">สั่งซื้อเลย</a>
+  </div>
+  <div class="bar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+</div>
+
+<section id="products">
+  <h2>เลือกรสที่ชอบ</h2>
+  <div class="products">
+    <article class="product">
+      <img src="images/dark70.svg" alt="ช็อคโกแลตดาร์ก 70% ห่อสีม่วงเข้ม" width="600" height="600">
+      <div class="pbody">
+        <h3>ดาร์ก 70%</h3>
+        <p>เข้มข้น ขมนุ่ม ปลายลิ้นมีกลิ่นผลไม้แห้ง</p>
+        <span class="price">89 บาท</span> <span class="sku">รหัสสินค้า DK70</span>
+      </div>
+    </article>
+    <article class="product">
+      <img src="images/milk45.svg" alt="ช็อคโกแลตมิลค์ 45% ห่อสีเหลืองทอง" width="600" height="600">
+      <div class="pbody">
+        <h3>มิลค์ 45%</h3>
+        <p>หวานมัน กลิ่นคาราเมล ทานง่ายทั้งเด็กและผู้ใหญ่</p>
+        <span class="price">79 บาท</span> <span class="sku">รหัสสินค้า MK45</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section>
+  <div class="facts">
+    <div><b>ส่วนผสมน้อย</b>โกโก้ น้ำตาล โกโก้บัตเตอร์ (มิลค์เพิ่มนมผง)</div>
+    <div><b>ค่าส่ง 40 บาท</b>เหมาจ่ายทั่วไทย สั่งครบ 300 บาท ส่งฟรี</div>
+    <div><b>เก็บให้ถูกวิธี</b>เก็บในที่เย็น ไม่โดนแดด ทานได้ภายใน 12 เดือน</div>
+  </div>
+</section>
+
+<section id="order">
+  <h2>สั่งซื้อ</h2>
+  <form id="f" novalidate>
+    <fieldset>
+      <legend>เลือกสินค้า</legend>
+      <div class="item"><span>ดาร์ก 70% <small>(DK70) 89 บาท</small></span>
+        <div class="qty"><button type="button" data-sku="DK70" data-d="-1" aria-label="ลดจำนวนดาร์ก">−</button><output id="q-DK70">0</output><button type="button" data-sku="DK70" data-d="1" aria-label="เพิ่มจำนวนดาร์ก">+</button></div></div>
+      <div class="item"><span>มิลค์ 45% <small>(MK45) 79 บาท</small></span>
+        <div class="qty"><button type="button" data-sku="MK45" data-d="-1" aria-label="ลดจำนวนมิลค์">−</button><output id="q-MK45">0</output><button type="button" data-sku="MK45" data-d="1" aria-label="เพิ่มจำนวนมิลค์">+</button></div></div>
+      <div class="sum" aria-live="polite">
+        <div><span>ค่าสินค้า</span><span id="s-sub">0 บาท</span></div>
+        <div><span>ค่าส่ง</span><span id="s-ship">0 บาท</span></div>
+        <div class="total"><span>รวมทั้งหมด</span><span id="s-tot">0 บาท</span></div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>ที่อยู่จัดส่ง</legend>
+      <div class="row">
+        <label>ชื่อ-นามสกุลผู้รับ<input name="name" autocomplete="name" required></label>
+        <label>เบอร์โทร<input name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="0812345678" required></label>
+      </div>
+      <label>ที่อยู่ (บ้านเลขที่ หมู่บ้าน ซอย ถนน)<textarea name="address" rows="2" autocomplete="street-address" required></textarea></label>
+      <div class="row">
+        <label>แขวง/ตำบล<input name="subdistrict" required></label>
+        <label>เขต/อำเภอ<input name="district" required></label>
+      </div>
+      <div class="row">
+        <label>จังหวัด<input name="province" required></label>
+        <label>รหัสไปรษณีย์<input name="postcode" inputmode="numeric" maxlength="5" required></label>
+      </div>
+      <label>หมายเหตุ (ถ้ามี)<input name="note"></label>
+    </fieldset>
+    <div id="msg" role="status"></div>
+    <button class="btn" id="submit" type="submit">ยืนยันคำสั่งซื้อ</button>
+  </form>
+</section>
+</div>
+<footer><div class="wrap">Koko Kraft · งานตัวอย่างสำหรับการเรียน ไม่ได้ขายสินค้าจริง</div></footer>
+
+<script>
+// 1) วาง URL ของ Google Apps Script (Web app) ที่นี่
+const SCRIPT_URL = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+
+const PRICE = {DK70: 89, MK45: 79}, NAME = {DK70: "ดาร์ก 70%", MK45: "มิลค์ 45%"};
+const FREE_SHIP = 300, SHIP = 40;
+const qty = {DK70: 0, MK45: 0};
+const $ = id => document.getElementById(id);
+
+function calc(){
+  const sub = Object.keys(qty).reduce((s,k)=>s+qty[k]*PRICE[k],0);
+  const ship = sub === 0 || sub >= FREE_SHIP ? 0 : SHIP;
+  return {sub, ship, total: sub + ship};
+}
+function render(){
+  for (const k in qty) $("q-"+k).textContent = qty[k];
+  const c = calc();
+  $("s-sub").textContent = c.sub + " บาท";
+  $("s-ship").textContent = c.ship ? c.ship + " บาท" : (c.sub ? "ฟรี" : "0 บาท");
+  $("s-tot").textContent = c.total + " บาท";
+}
+document.querySelectorAll(".qty button").forEach(b => b.addEventListener("click", () => {
+  const k = b.dataset.sku; qty[k] = Math.max(0, Math.min(20, qty[k] + Number(b.dataset.d))); render();
+}));
+
+function show(type, text){ const m = $("msg"); m.className = type; m.textContent = text; m.scrollIntoView({block:"center", behavior:"smooth"}); }
+
+$("f").addEventListener("submit", async e => {
+  e.preventDefault();
+  const f = e.target, d = Object.fromEntries(new FormData(f));
+  const c = calc();
+  if (c.sub === 0) return show("err", "กรุณาเลือกสินค้าอย่างน้อย 1 ชิ้น");
+  for (const k of ["name","phone","address","subdistrict","district","province","postcode"])
+    if (!String(d[k]||"").trim()) return show("err", "กรุณากรอกข้อมูลที่อยู่ให้ครบทุกช่อง");
+  if (!/^0\d{8,9}$/.test(d.phone.replace(/[-\s]/g,""))) return show("err", "เบอร์โทรไม่ถูกต้อง ตัวอย่าง 0812345678");
+  if (!/^\d{5}$/.test(d.postcode)) return show("err", "รหัสไปรษณีย์ต้องเป็นตัวเลข 5 หลัก");
+  if (SCRIPT_URL.startsWith("PASTE")) return show("err", "ยังไม่ได้ตั้งค่า SCRIPT_URL ใน index.html");
+
+  const orderId = "KK" + Date.now().toString().slice(-8);
+  const payload = {...d, phone: d.phone.replace(/[-\s]/g,""), orderId,
+    qtyDK70: qty.DK70, qtyMK45: qty.MK45,
+    items: Object.keys(qty).filter(k=>qty[k]).map(k=>`${k} ${NAME[k]} x${qty[k]}`).join(", "),
+    subtotal: c.sub, shipping: c.ship, total: c.total};
+
+  const btn = $("submit"); btn.disabled = true; btn.textContent = "กำลังส่งคำสั่งซื้อ...";
+  try {
+    await fetch(SCRIPT_URL, {method:"POST", mode:"no-cors", body: new URLSearchParams(Object.entries(payload).map(([k,v])=>[k,String(v)]))});
+    show("ok", `รับคำสั่งซื้อแล้ว เลขที่ ${orderId} ยอดรวม ${c.total} บาท เราจะแพ็คและส่งภายใน 2 วันทำการ`);
+    f.reset(); qty.DK70 = qty.MK45 = 0; render();
+  } catch (err) {
+    show("err", "ส่งคำสั่งซื้อไม่สำเร็จ ตรวจสอบอินเทอร์เน็ตแล้วลองอีกครั้ง");
+  } finally { btn.disabled = false; btn.textContent = "ยืนยันคำสั่งซื้อ"; }
+});
+render();
+</script>
+</body>
+</html>
